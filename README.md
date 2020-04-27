@@ -22,7 +22,7 @@ Below is screenshot how app looks:
 ## Features
 
 - [x] Structure based upon MVVM architecture and Protocol oriented programming.
-- [x] 100% programatically developed UI and Universal device(iPhone/iPad) support.
+- [x] Universal device(iPhone/iPad) support.
     - [x] Use autolayouts programatically.
     - [x] Landscape and Potrait orientation support.
 - [x] API hosted on gist server in JSON format.
