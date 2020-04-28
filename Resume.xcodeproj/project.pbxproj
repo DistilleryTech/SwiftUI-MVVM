@@ -24,6 +24,7 @@
 		F152EC3B244E2E0900ABBA92 /* IdentifiableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152EC3A244E2E0800ABBA92 /* IdentifiableProtocol.swift */; };
 		F152EC3D244E2E9600ABBA92 /* UILabel+Multiline.swift in Sources */ = {isa = PBXBuildFile; fileRef = F152EC3C244E2E9600ABBA92 /* UILabel+Multiline.swift */; };
 		F1856BD924568F860097126B /* HorizontalImageText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1856BD824568F860097126B /* HorizontalImageText.swift */; };
+		F1856BFF2457DA920097126B /* MultilineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1856BFE2457DA920097126B /* MultilineLabel.swift */; };
 		F1B0253D243B9AF800ED1430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B0253C243B9AF800ED1430 /* AppDelegate.swift */; };
 		F1B0253F243B9AF800ED1430 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B0253E243B9AF800ED1430 /* SceneDelegate.swift */; };
 		F1B02541243B9AF800ED1430 /* ResumeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B02540243B9AF800ED1430 /* ResumeHomeView.swift */; };
@@ -53,6 +54,7 @@
 		F152EC3A244E2E0800ABBA92 /* IdentifiableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifiableProtocol.swift; sourceTree = "<group>"; };
 		F152EC3C244E2E9600ABBA92 /* UILabel+Multiline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Multiline.swift"; sourceTree = "<group>"; };
 		F1856BD824568F860097126B /* HorizontalImageText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalImageText.swift; sourceTree = "<group>"; };
+		F1856BFE2457DA920097126B /* MultilineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultilineLabel.swift; sourceTree = "<group>"; };
 		F1B02539243B9AF800ED1430 /* Resume2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resume2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B0253C243B9AF800ED1430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1B0253E243B9AF800ED1430 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		F1856BD724568F660097126B /* ResuableViews */ = {
 			isa = PBXGroup;
 			children = (
+				F1856BFE2457DA920097126B /* MultilineLabel.swift */,
 				F1856BD824568F860097126B /* HorizontalImageText.swift */,
 			);
 			path = ResuableViews;
@@ -296,6 +299,7 @@
 			files = (
 				F152EC1E2444DD5000ABBA92 /* NetworkProtocol.swift in Sources */,
 				F1B0253D243B9AF800ED1430 /* AppDelegate.swift in Sources */,
+				F1856BFF2457DA920097126B /* MultilineLabel.swift in Sources */,
 				F152EC3024465ECC00ABBA92 /* Enums.swift in Sources */,
 				F152EC072443BF9700ABBA92 /* LanguageSection.swift in Sources */,
 				F152EC3D244E2E9600ABBA92 /* UILabel+Multiline.swift in Sources */,

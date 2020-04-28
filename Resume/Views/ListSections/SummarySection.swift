@@ -13,12 +13,10 @@ struct SummarySection: View {
     
     var body : some View {
         Section(header: Text("Summary")) {
-            ForEach(summary, id: \.self) { item in
-                Text(item)
-                    .font(Font.system(size: 16))
-                    .fontWeight(.regular)
-                    .padding(.vertical, 5)
-            }
+            VStack(alignment: .leading, spacing: 10, content: {
+                MultilineLabel(content: $summary)
+                    .padding(.vertical, 10)
+            })
         }
     }
 }

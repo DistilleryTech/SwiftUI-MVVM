@@ -8,17 +8,15 @@
 
 import UIKit
 
-extension UILabel{
-
+extension Array{
     /// Convert array of string to mutiline paragraph
-    func showMultiline(stringList: [String],
-                       textStyle: UIFont.TextStyle = .body,
+    func showMultiline(textStyle: UIFont.TextStyle = .body,
                        bullet: String = "\u{2022}",
                        indentation: CGFloat = 20,
                        lineSpacing: CGFloat = 1,
-                       paragraphSpacing: CGFloat = 0,
+                       paragraphSpacing: CGFloat = 5,
                        textColor: UIColor = .black,
-                       bulletColor: UIColor = .black) {
+                       bulletColor: UIColor = .black) -> NSMutableAttributedString {
 
         let textAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: .regular), NSAttributedString.Key.foregroundColor: textColor]
         let bulletAttributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedString.Key.foregroundColor: bulletColor]
@@ -33,7 +31,7 @@ extension UILabel{
         paragraphStyle.headIndent = indentation
 
         let bulletList = NSMutableAttributedString()
-        for string in stringList {
+        for string in self {
             let formattedString = "\(bullet)\t\(string)\n"
             let attributedString = NSMutableAttributedString(string: formattedString)
 
@@ -50,7 +48,6 @@ extension UILabel{
             attributedString.addAttributes(bulletAttributes, range: rangeForBullet)
             bulletList.append(attributedString)
         }
-        self.attributedText = bulletList
-
+        return bulletList
     }
 }
