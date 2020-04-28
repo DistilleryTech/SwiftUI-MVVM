@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Combine
+
 protocol ViewModelProtocol : ObservableObject {
     //Variables
     var sectionsHeaders : [String] {get set}
@@ -18,6 +18,9 @@ protocol ViewModelProtocol : ObservableObject {
     var education : [Resume.Education] {get set}
     var languages : [Resume.Language] {get set}
     var disableRefreshButton : Bool {get set}
+    var presentAlert : Bool {get set}
+    var alertTitle : String {get set}
+    var alertMessage : String {get set}
     
     // Methods
     func refreshBarButtonTapped()

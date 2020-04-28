@@ -28,10 +28,14 @@ struct ResumeHomeView: View {
                     }
                 }
             }
+                // In case of some error
+                .alert(isPresented: $viewModel.presentAlert){
+                    Alert(title: Text(viewModel.alertTitle), message: Text(viewModel.alertMessage))
+            }
             .navigationBarTitle("Resume")
             .navigationBarItems(trailing:
                 Button(action: {
-                    self.viewModel.fetchResume()
+                    self.viewModel.refreshBarButtonTapped()
                 }) {
                     Image(systemName: "arrow.clockwise")
                 }
@@ -67,6 +71,7 @@ private extension ResumeHomeView {
         }
     }
 }
+
 struct ResumeHomeView_Previews: PreviewProvider {
     static var previews: some View {
         ResumeHomeView()

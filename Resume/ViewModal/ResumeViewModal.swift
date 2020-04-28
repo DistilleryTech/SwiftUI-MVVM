@@ -19,6 +19,9 @@ class ResumeViewModal:ViewModelProtocol {
     @Published var education : [Resume.Education] = []
     @Published var languages : [Resume.Language] = []
     @Published var disableRefreshButton : Bool = true
+    @Published var presentAlert : Bool = false
+    @Published var alertTitle : String = ""
+    @Published var alertMessage : String = ""
     
     //MARK:- Private variables
     private let headers: [String] = ["","Summary",
@@ -47,8 +50,9 @@ class ResumeViewModal:ViewModelProtocol {
 }
 
 extension ResumeViewModal {
-    func fetchResume(){
+    private func fetchResume(){
         disableRefreshButton = true
+        presentAlert = false
         // Publisher
         networkManager.fetchDataFromServer()
             .receive(on: DispatchQueue.main)
@@ -58,13 +62,17 @@ extension ResumeViewModal {
                 receiveCompletion: { [weak self] completion in
                     guard let self = self else { return }
                     switch completion {
-                    case .failure(_):
+                    case .failure(let error):
                         self.sectionsHeaders.removeAll()
-                        
+                        guard let errorTittle = error.title, let errorMsg = error.description else { return  }
+                        self.alertTitle = errorTittle
+                        self.alertMessage = errorMsg
+                        self.presentAlert = true
                     case .finished:
-                        self.disableRefreshButton = false
                         break
                     }
+                    self.disableRefreshButton = false
+
                 }, receiveValue: { [weak self] data in
                     guard let self = self else { return }
                     self.resumeDetails = data
